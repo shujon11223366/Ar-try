@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Virtual Sunglass Try-On</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="app">
+    <header>
+      <h1>Try Glasses — Demo</h1>
+      <div class="controls">
+        <select id="frameSelect">
+          <option value="frames/frame1.png">Frame 1</option>
+          <option value="frames/frame2.png">Frame 2</option>
+          <option value="frames/frame3.png">Frame 3</option>
+        </select>
+        <a id="orderBtn" class="button" href="#" target="_blank">Order via WhatsApp</a>
+      </div>
+    </header>
+
+    <main>
+      <!-- Video: camera feed -->
+      <video id="video" autoplay playsinline muted></video>
+
+      <!-- Canvas for optional debug overlay (hidden normally) -->
+      <canvas id="overlay"></canvas>
+
+      <!-- Glasses image overlay -->
+      <img id="glasses" src="frames/frame1.png" alt="frame" />
+
+      <!-- small instructions -->
+      <div id="hint">Allow camera → select frame → move head</div>
+    </main>
+
+    <footer>
+      <small>Demo: Works best on mobile Chrome / desktop Chrome. No upload required.</small>
+    </footer>
+  </div>
+
+  <!-- MediaPipe FaceMesh -->
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/face_mesh@0.4/face_mesh.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils@0.4/camera_utils.js"></script>
+
+  <script src="script.js"></script>
+</body>
+</html>
